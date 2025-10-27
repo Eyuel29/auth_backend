@@ -1,11 +1,11 @@
 import { betterAuth } from 'better-auth';
-import { memoryAdapter } from 'better-auth/adapters/memory';
 import { wechatOAuth } from './plugins/wechat-oauth';
 import env from '@/env';
+import Database from "better-sqlite3";
 
 export const auth = betterAuth({
   appName: 'Auth Demo',
-  database: memoryAdapter({}),
+  database: new Database("database.sqlite"),
   session: {
     cookieCache: { enabled: true, maxAge: 60 * 60 },
     expiresIn: 60 * 60 * 24 * 7,

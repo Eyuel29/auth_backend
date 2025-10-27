@@ -23,7 +23,7 @@ const envSchema = z
     WECHAT_OAUTH_CLIENT_SECRET: z.string(),
     WECHAT_SYNTHETIC_EMAIL_DOMAIN: z.string().default('wechat.local'),
     WECHAT_DEBUG: z.coerce.boolean().default(false),
-    BETTER_AUTH_SECRET: z.string(),
+    BETTER_AUTH_SECRET: z.string().optional(),
   });
 
 export type Env = z.infer<typeof envSchema>;
