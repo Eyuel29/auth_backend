@@ -16,6 +16,7 @@ expand(
 const envSchema = z
   .object({
     PORT: z.coerce.number().default(3000),
+    BASE_URL: z.string(),
     ALLOWED_ORIGIN: z.string(),
     GOOGLE_OAUTH_CLIENT_ID: z.string(),
     GOOGLE_OAUTH_CLIENT_SECRET: z.string(),
