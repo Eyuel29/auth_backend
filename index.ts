@@ -1,4 +1,3 @@
-import env from "@/env";
 import { auth } from "@/lib/auth";
 import { toNodeHandler } from "better-auth/node";
 import cors from "cors";
@@ -6,7 +5,7 @@ import express from "express";
 import morgan from "morgan";
 
 const app = express();
-const port = env.PORT;
+const port = process.env.PORT;
 
 app.use(
   morgan(':method :url :status')
