@@ -4,15 +4,11 @@ import { betterFetch } from "@better-fetch/fetch";
 import { genericOAuth } from "better-auth/plugins";
 import { Database } from "bun:sqlite";
 
+const trustedOrigins = process.env.TRUSTED_ORIGINS?.split(",") ?? [];
+
 export const auth = betterAuth({
-  appName: "Auth Demo",
-  trustedOrigins: [
-    "authdemo://",
-    "rndemo://",
-    "exp://",
-    "http://localhost:8081",
-    "http://localhost:8080",
-  ],
+  appName: "Auth Expo",
+  trustedOrigins,
   baseURL: process.env.BASE_URL,
   database: new Database("database.sqlite"),
   session: {
@@ -100,7 +96,6 @@ export const auth = betterAuth({
       console.error("auth error:", error);
     },
   },
-  secret: process.env.BETTER_AUTH_SECRET || "",
 });
 
 export interface WeChatProfile extends Record<string, any> {
