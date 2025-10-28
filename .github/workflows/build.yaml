@@ -20,7 +20,8 @@ jobs:
       - name: Build Docker image
         run: docker build . --file Dockerfile --tag joeldejene/auth_backend:${TAG}
 
-      - name: Push image to Docker Hub
-        run: |
-          docker login -u joeldejene -p ${{ secrets.DOCKER_HUB_TOKEN }}
-          docker push joeldejene/auth_backend:${TAG}
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u joeldejene --password-stdin
+
+      - name: Push Docker image
+        run: docker push joeldejene/auth_backend:${TAG}
