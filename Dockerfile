@@ -21,7 +21,7 @@ COPY . .
 RUN bun auth:generate && bun auth:migrate
 
 # Expose the port your app uses (adjust if different)
-EXPOSE 3000
+EXPOSE 4000
 
 # Default command to start the app
 CMD ["bun", "dev"]
