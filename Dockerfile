@@ -7,6 +7,9 @@ WORKDIR /app/
 # Copy package files first for caching bun install
 COPY package.json bun.lock ./
 
+# Install system dependencies for native modules
+RUN apt-get update && apt-get install -y python3 make g++ && rm -rf /var/lib/apt/lists/*
+
 # Install dependencies
 RUN bun install --production
 
