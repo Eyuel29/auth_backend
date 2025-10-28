@@ -18,7 +18,7 @@ COPY . .
 
 # Run initial auth setup commands
 # You can chain commands with && to fail early if any step fails
-RUN bun auth:generate && bun auth:migrate
+RUN bun auth:generate -y && bun auth:migrate -y
 
 # Expose the port your app uses (adjust if different)
 EXPOSE 4000
