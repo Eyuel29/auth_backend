@@ -1,0 +1,41 @@
+# Uploads (if generated at runtime)
+web/app/uploads/**
+
+# Node modules (dev dependencies are installed separately in prod)
+node_modules
+
+# Git
+.git
+
+# Env files
+.env
+.env.*
+
+# IDE/editor
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs/temp
+*.log
+*.cache
+*.tmp
+tmp/
+temp/
+
+# Backup
+*.bak
+*.backup
+*.old
+
+# Test files
+tests/
+phpunit.xml
+.phpunit.result.cache
