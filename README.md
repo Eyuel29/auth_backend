@@ -1,20 +1,21 @@
-# syn_backend
+# auth_backend
 
 ### Overview
 
-syn_backend is a Bun + Express backend project integrated with BetterAuth for Google and WeChat authentication. It uses SQLite as the database and is designed for both development and production workflows.
+**auth_backend** is a **Bun + Express** backend integrated with **BetterAuth** for Google and WeChat authentication. It uses **SQLite** as the database and supports both development and production workflows.
 
 ---
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Eyuel29/auth_backend.git
+
 cd auth_backend
 ```
 ---
 
-### 2. Install dependencies
+### 2. Install Dependencies
 
 #### Development
 
@@ -28,35 +29,36 @@ bun install
 bun install --production
 ```
 
-> Note: Production install excludes devDependencies like TypeScript types, linters, and hot reload tools.
+> **Note:** Production install excludes devDependencies like TypeScript types, linters, and hot reload tools.
 
 ---
 
-### 3. Configure environment variables
+### 3. Configure Environment Variables
 
 Create a `.env` file in the project root:
 
 ```env
-PORT
-ALLOWED_ORIGIN
-GOOGLE_OAUTH_CLIENT_ID
-GOOGLE_OAUTH_CLIENT_SECRET
-WECHAT_OAUTH_CLIENT_ID
-WECHAT_OAUTH_CLIENT_SECRET
-WECHAT_SYNTHETIC_EMAIL_DOMAIN
-BASE_URL
+PORT=
+TRUSTED_ORIGINS=
+GOOGLE_OAUTH_CLIENT_ID=
+GOOGLE_OAUTH_CLIENT_SECRET=
+WECHAT_OAUTH_CLIENT_ID=
+WECHAT_OAUTH_CLIENT_SECRET=
+WECHAT_SYNTHETIC_EMAIL_DOMAIN=
+BASE_URL=
 ```
+
 ---
 
-### 4. BetterAuth setup
+### 4. BetterAuth Setup
 
-#### Generate auth scaffolding
+#### Generate Auth Scaffolding
 
 ```bash
 bun auth:generate
 ```
 
-#### Run database migrations
+#### Run Database Migrations
 
 ```bash
 bunx auth:migrate
@@ -66,7 +68,7 @@ bunx auth:migrate
 
 ---
 
-### 5. Running the app
+### 5. Running the App
 
 #### Development (hot reload)
 

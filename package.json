@@ -1,16 +1,16 @@
 {
   "name": "syn_backend",
   "module": "index.ts",
+  "version": "0.0.1",
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "bun run --hot index.ts",
-    "start": "bun run index.ts",
-    "auth:migrate": "bunx --bun @better-auth/cli migrate",
-    "auth:generate": "bunx --bun @better-auth/cli generate"
+    "dev": "node index.ts",
+    "start": "node index.ts",
+    "auth:migrate": "npx @better-auth/cli migrate",
+    "auth:generate": "npx --bun @better-auth/cli generate"
   },
   "devDependencies": {
-    "@types/bun": "^1.3.1",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.4",
     "@types/morgan": "^1.9.10"
@@ -22,7 +22,7 @@
     "@better-auth/cli": "^1.3.32",
     "@better-auth/expo": "^1.3.32",
     "@types/node": "^24.9.1",
-    "better-auth": "1.3.13",
+    "better-auth": "1.3.32",
     "better-fetch": "^1.1.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",

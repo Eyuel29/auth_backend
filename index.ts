@@ -11,9 +11,17 @@ app.use(
   morgan(':method :url :status')
 );
 
+const trustedOrigins = process.env.TRUSTED_ORIGINS?.split(",") ?? [];
+
 app.use(
   cors({
-    origin: true,
+    origin: (origin, callback) => {
+      if (!origin || trustedOrigins.includes(origin)) {
+        callback(null, true)
+      } else {
+        callback(new Error('Not allowed by CORS'))
+      }
+    },
     methods: ["GET", "OPTIONS", "POST"],
     credentials: true,
   })
